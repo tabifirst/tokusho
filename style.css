@@ -1,0 +1,82 @@
+:root {
+  --bg: #fbfaf7;
+  --text: #24282d;
+  --muted: #6a7078;
+  --accent: #1f7a8c;
+  --line: #e4e2dc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15181b;
+    --text: #e8e9ea;
+    --muted: #9aa1a8;
+    --accent: #5cc0d2;
+    --line: #2b3035;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+.hero { padding: 64px 0 48px; border-bottom: 1px solid var(--line); }
+.eyebrow {
+  color: var(--accent); font-weight: 700;
+  font-size: .8rem; letter-spacing: .18em; text-transform: uppercase;
+}
+.hero h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.3; margin-top: 6px; }
+
+/* Table */
+.page-single { max-width: 880px; padding-top: 40px; padding-bottom: 80px; }
+
+.spec { border-top: 1px solid var(--line); }
+.spec .row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.spec dt { font-weight: 700; line-height: 1.7; }
+.spec dd { line-height: 1.9; min-width: 0; }
+.spec dd p + p { margin-top: 10px; }
+
+.contact-img {
+  display: block;
+  height: 26px;
+  width: auto;
+  max-width: 100%;
+  mix-blend-mode: multiply; /* 画像の白背景をなじませる */
+}
+@media (prefers-color-scheme: dark) {
+  .contact-img {
+    mix-blend-mode: normal;
+    background: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    height: 34px;
+  }
+}
+
+/* Footer */
+.site-footer {
+  text-align: center; padding: 32px 24px;
+  color: var(--muted); font-size: .85rem;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 640px) {
+  .spec .row { grid-template-columns: 1fr; gap: 6px; padding: 18px 2px; }
+  .spec dt { color: var(--accent); font-size: .92rem; }
+}
