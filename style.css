@@ -80,3 +80,9 @@ body {
   .spec .row { grid-template-columns: 1fr; gap: 6px; padding: 18px 2px; }
   .spec dt { color: var(--accent); font-size: .92rem; }
 }
+
+/* メール画像は少し小さめに */
+.contact-mail { height: 20px; margin-top: 5px; }
+@media (prefers-color-scheme: dark) {
+  .contact-mail { height: 28px; }
+}
